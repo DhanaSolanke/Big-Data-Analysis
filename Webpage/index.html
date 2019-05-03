@@ -1,0 +1,332 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        function displayTwitterContainer(){
+          var twitterContainer = document.getElementById("Twitter");
+          var nyContainer = document.getElementById("NYTimes");
+          var ccContainer = document.getElementById("CC");
+          // alert("Inside Twitter onClick " + twitterContainer.style.display);
+          if(twitterContainer.style.display == 'none'){
+            $("#" + "Twitter").toggle();
+          }
+          if(nyContainer.style.display != 'none'){
+            $("#" + "NYTimes").toggle(); 
+          }
+          if(ccContainer.style.display != 'none'){
+            $("#" + "CC").toggle(); 
+          }
+        }
+
+        function displayNYTimesContainer(){
+          // $("#" + "NYTimes").toggle();
+          // $("#" + "Twitter").toggle();
+          var twitterContainer = document.getElementById("Twitter");
+          var nyContainer = document.getElementById("NYTimes");
+          var ccContainer = document.getElementById("CC");
+          if(nyContainer.style.display == 'none'){
+            $("#" + "NYTimes").toggle();
+          }
+          if(twitterContainer.style.display != 'none'){
+            $("#" + "Twitter").toggle(); 
+          }
+          if(ccContainer.style.display != 'none'){
+            $("#" + "CC").toggle(); 
+          }
+        }
+
+        function displayCCContainer(){
+          // alert("Inside CC onClick");
+          // var container = document.getElementById("dropdown");
+          var twitterContainer = document.getElementById("Twitter");
+          var nyContainer = document.getElementById("NYTimes");
+          var ccContainer = document.getElementById("CC");
+          // alert("Inside Twitter onClick " + twitterContainer.style.display);
+          if(twitterContainer.style.display != 'none'){
+            $("#" + "Twitter").toggle();
+          }
+          if(nyContainer.style.display != 'none'){
+            $("#" + "NYTimes").toggle(); 
+          }
+          if(ccContainer.style.display == 'none'){
+            $("#" + "CC").toggle(); 
+          }
+        }
+    </script>
+    <style>
+        img {
+          border: 1px solid black;
+          border-radius: 4px;
+          padding: 5px;
+          width: 150px;
+        }
+        
+        img:hover {
+          box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+        </style>
+</head>
+
+<body>
+        <div class="jumbotron text-center">
+            <h1>Lab 2 - Part 3</h1>
+            <p>aartitan ddsolank</p> 
+        </div>
+
+        <div class="container" id="selectSource">
+            <h4>Select the Data Source</h4>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" >Data Source
+                  </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      <li><a role="menuitem" tabindex="-1" href="#" onclick="displayTwitterContainer()">Twitter</a></li>
+                      <li><a role="menuitem" tabindex="-1" href="#" onclick="displayNYTimesContainer()">NYTimes</a></li>
+                      <li><a role="menuitem" tabindex="-1" href="#" onclick="displayCCContainer()">Common Crawl</a></li>
+                    </ul>
+                  </div>
+                </div>
+        </div>
+              
+
+        <div class="container" style="display:none; padding-bottom: 20px;" id="Twitter">
+          <h3>Twitter Data</h3>  
+          <div id="twitterCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#twitterCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#twitterCarousel" data-slide-to="1"></li>
+              <li data-target="#twitterCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Subset Top 10 Words</h4>
+                      <img src="img/smalldataTwitterWordCount_N10.jpg" alt="Subset Top 10 Words" style="width:100%;">
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Superset Top 10 Words</h4>
+                      <img src="img/bigdataTwitterWordCount_N10.jpg" alt="Superset Top 10 Words" style="width:100%;">
+                    </div>
+                </div>
+              </div>
+
+              <div class="item">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h4>Subset Top 100 Words</h4>
+                          <img src="img/smalldataTwitterWordCount_N100.jpg" alt="Subset Top 100 Words" style="width:100%;">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Superset Top 100 Words</h4>
+                          <img src="img/bigdataTwitterWordCount_N100.jpg" alt="Superset Top 100 Words" style="width:100%;">
+                        </div>
+                    </div>
+              </div>
+            
+              <div class="item">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h4>Subset Top 10 Co-occuring Words</h4>
+                          <img src="img/smalldataTwitterWordCoOccur_N10.jpg" alt="Subset Top 10 Co-occuring Words" style="width:100%;">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Superset Top 10 Co-occuring Words</h4>
+                          <img src="img/bigdataTwitterWordCoOccur_N10.jpg" alt="Superset Top 10 Co-occuring Words" style="width:100%;">
+                        </div>
+                    </div>
+              </div>
+
+              <div class="item">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h4>Subset Top 100 Co-occuring Words</h4>
+                          <img src="img/smalldataTwitterWordCoOccur_N100.jpg" alt="Subset Top 100 Co-occuring Words" style="width:100%;">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Superset Top 100 Co-occuring Words</h4>
+                          <img src="img/bigdataTwitterWordCoOccur_N100.jpg" alt="Superset Top 100 Co-occuring Words" style="width:100%;">
+                        </div>
+                    </div>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#twitterCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#twitterCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="container" style="display:none; padding-bottom: 20px;" id="NYTimes">
+            <h3>NYTimes Data</h3>  
+            <div id="nytimesCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#nytimesCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#nytimesCarousel" data-slide-to="1"></li>
+                <li data-target="#nytimesCarousel" data-slide-to="2"></li>
+              </ol>
+  
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4>Subset Top 10 Words</h4>
+                        <img src="img/smalldataNYTimesWordCount_N10.jpg" alt="Subset Top 10 Words" style="width:100%;">
+                      </div>
+                      <div class="col-md-6">
+                          <h4>Superset Top 10 Words</h4>
+                        <img src="img/bigdataNYTimesWordCount_N10.jpg" alt="Superset Top 10 Words" style="width:100%;">
+                      </div>
+                  </div>
+                </div>
+  
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Subset Top 100 Words</h4>
+                            <img src="img/smalldataNYTimesWordCount_N100.jpg" alt="Subset Top 100 Words" style="width:100%;">
+                          </div>
+                          <div class="col-md-6">
+                              <h4>Superset Top 100 Words</h4>
+                            <img src="img/bigdataNYTimesWordCount_N100.jpg" alt="Superset Top 100 Words" style="width:100%;">
+                          </div>
+                      </div>
+                </div>
+              
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Subset Top 10 Co-occuring Words</h4>
+                            <img src="img/smalldataNYTimesWordCoOccur_N10.jpg" alt="Subset Top 10 Co-occuring Words" style="width:100%;">
+                          </div>
+                          <div class="col-md-6">
+                              <h4>Superset Top 10 Co-occuring Words</h4>
+                            <img src="img/bigdataNYTimesWordCoOccur_N10.jpg" alt="Superset Top 10 Co-occuring Words" style="width:100%;">
+                          </div>
+                      </div>
+                </div>
+  
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Subset Top 100 Co-occuring Words</h4>
+                            <img src="img/smalldataNYTimesWordCoOccur_N100.jpg" alt="Subset Top 100 Co-occuring Words" style="width:100%;">
+                          </div>
+                          <div class="col-md-6">
+                              <h4>Subset Top 100 Co-occuring Words</h4>
+                            <img src="img/bigdataNYTimesWordCoOccur_N100.jpg" alt="Superset Top 100 Co-occuring Words" style="width:100%;">
+                          </div>
+                      </div>
+                </div>
+              </div>
+  
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#nytimesCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#nytimesCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="container" style="display:none; padding-bottom: 20px;" id="CC">
+              <h3>Common Crawl Data</h3>  
+              <div id="ccCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#ccCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#ccCarousel" data-slide-to="1"></li>
+                  <li data-target="#ccCarousel" data-slide-to="2"></li>
+                </ol>
+    
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h4>Subset Top 10 Words</h4>
+                          <img src="img/ccSmallWordCount_N10.jpg" alt="Subset Top 10 Words" style="width:100%;">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Superset Top 10 Words</h4>
+                          <img src="img/ccbigWordCount_N10.jpg" alt="Superset Top 10 Words" style="width:100%;">
+                        </div>
+                    </div>
+                  </div>
+    
+                  <div class="item">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <h4>Subset Top 100 Words</h4>
+                              <img src="img/ccSmallWordCount_N100.jpg" alt="Subset Top 100 Words" style="width:100%;">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Superset Top 100 Words</h4>
+                              <img src="img/ccbigWordCount_N100.jpg" alt="Superset Top 100 Words" style="width:100%;">
+                            </div>
+                        </div>
+                  </div>
+                
+                  <div class="item">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <h4>Subset Top 10 Co-occuring Words</h4>
+                              <img src="img/ccSmallWordCoOccur_N10.jpg" alt="Subset Top 10 Co-occuring Words" style="width:100%;">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Superset Top 10 Co-occuring Words</h4>
+                              <img src="img/ccBigWordCoOccur_N10.jpg" alt="Superset Top 10 Co-occuring Words" style="width:100%;">
+                            </div>
+                        </div>
+                  </div>
+    
+                  <div class="item">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <h4>Subset Top 100 Co-occuring Words</h4>
+                              <img src="img/ccSmallWordCoOccur_N100.jpg" alt="Subset Top 100 Co-occuring Words" style="width:100%;">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Superset Top 100 Co-occuring Words</h4>
+                              <img src="img/ccBigWordCoOccur_N100.jpg" alt="Superset Top 100 Co-occuring Words" style="width:100%;">
+                            </div>
+                        </div>
+                  </div>
+                </div>
+    
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#ccCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#ccCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+  
+</body>
+</body>
+</html>
